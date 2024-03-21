@@ -2,9 +2,12 @@
 name = "loguru-extra"
 version = "0.1.0"
 description = ""
-authors = ["ABGalkin <ABGalkin@alfabank.ru>"]
+authors = ["ABGalkin <galkin88@gmail.com>"]
 readme = "README.md"
 packages = [{include = "loguru_extra", from = "src"}]
+license = {file = "LICENSE"}
+repository = "https://github.com/galkin-anton/loguru-extra"
+keywords = ["log", "loguru"]
 
 [tool.poetry.dependencies]
 python = "^3.12"
