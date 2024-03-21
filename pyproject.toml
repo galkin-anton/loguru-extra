@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "loguru-extra"
+version = "0.1.0"
+description = ""
+authors = ["ABGalkin <ABGalkin@alfabank.ru>"]
+readme = "README.md"
+packages = [{include = "loguru_extra", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+loguru = "^0.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
