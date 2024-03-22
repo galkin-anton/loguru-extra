@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "loguru-extra"
-version = "0.1.2"
+version = "0.1.3"
 description = ""
 authors = ["ABGalkin <galkin88@gmail.com>"]
 readme = "README.md"
