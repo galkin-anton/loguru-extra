@@ -1,22 +1,24 @@
 [tool.poetry]
 name = "loguru-extra"
-version = "0.1.7"
-description = ""
+version = "0.2.0"
+description = "Ready-made loguru format and trace id propagation for sync and async code"
 authors = ["ABGalkin <galkin88@gmail.com>"]
 readme = "README.md"
 license = "MIT"
 repository = "https://github.com/galkin-anton/loguru-extra"
 packages = [{include = "loguru_extra", from = "src"}]
-keywords = ["log", "loguru"]
-
-#[project]
-#license = {file = "LICENSE"}
+keywords = ["log", "loguru", "trace", "tracing"]
 
 [tool.poetry.dependencies]
 python = "^3.12"
 loguru = "^0.7.2"
-traceid = "^1.1.1"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
 
 [build-system]
 requires = ["poetry-core"]
