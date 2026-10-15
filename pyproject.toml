@@ -1,25 +1,33 @@
-[tool.poetry]
+[project]
 name = "loguru-extra"
 version = "0.2.0"
 description = "Ready-made loguru format and trace id propagation for sync and async code"
-authors = ["ABGalkin <galkin88@gmail.com>"]
 readme = "README.md"
 license = "MIT"
-repository = "https://github.com/galkin-anton/loguru-extra"
-packages = [{include = "loguru_extra", from = "src"}]
+license-files = ["LICENSE"]
+authors = [{ name = "ABGalkin", email = "galkin88@gmail.com" }]
 keywords = ["log", "loguru", "trace", "tracing"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Logging",
+]
+requires-python = ">=3.12"
+dependencies = ["loguru>=0.7.2,<0.8"]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-loguru = "^0.7.2"
+[project.urls]
+Repository = "https://github.com/galkin-anton/loguru-extra"
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.0"
+[dependency-groups]
+dev = ["pytest>=8.0"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
 testpaths = ["tests"]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.11.32,<0.12.0"]
+build-backend = "uv_build"

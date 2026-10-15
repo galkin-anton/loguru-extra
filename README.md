@@ -50,7 +50,27 @@ with trace(request.headers["X-Request-ID"]):   # свой trace id, наприм
 
 ## Разработка
 
+Проект использует [uv](https://docs.astral.sh/uv/).
+
 ```bash
-poetry install
-poetry run pytest
+uv sync          # создать .venv и поставить зависимости
+uv run pytest    # запустить тесты
+```
+
+## Публикация в PyPI
+
+1. Поднять версию в `pyproject.toml` (например, `uv version --bump patch`).
+2. Собрать и опубликовать:
+
+```bash
+rm -rf dist
+uv build
+uv publish --token pypi-...      # или через переменную окружения UV_PUBLISH_TOKEN
+```
+
+Токен создаётся на https://pypi.org/manage/account/token/. Проверить публикацию заранее
+можно на TestPyPI:
+
+```bash
+uv publish --publish-url https://test.pypi.org/legacy/ --token pypi-...
 ```
